@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма 7.7 — "Сила — это стабильность, а не напряжение"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heartbeat {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .pulse {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #ff0066;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: pulse 2s infinite;
+        }
+
+        .running-pulse {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4444ff, transparent);
+            animation: run 3s linear infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.2;
+                height: 2px;
+            }
+            50% {
+                opacity: 1;
+                height: 4px;
+            }
+            100% {
+                opacity: 0.2;
+                height: 2px;
+            }
+        }
+
+        @keyframes run {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        .text span {
+            display: block;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heartbeat">
+        <div class="pulse"></div>
+    </div>
+    <div class="running-pulse"></div>
+    <div class="container">
+        <div class="text">
+            <span style="animation-delay: 0.1s">Сила — это не всплеск.</span>
+            <span style="animation-delay: 0.2s">Не рывок.</span>
+            <span style="animation-delay: 0.3s">Не импульс в защиту.</span>
+            <span style="animation-delay: 0.5s">&nbsp;</span>
+            <span style="animation-delay: 0.6s">Сила — это не борьба.</span>
+            <span style="animation-delay: 0.7s">Сила — это нежное удержание частоты,</span>
+            <span style="animation-delay: 0.8s">даже в самых простых, будничных действиях.</span>
+            <span style="animation-delay: 1.0s">&nbsp;</span>
+            <span style="animation-delay: 1.1s">Стабильность — не о повторе.</span>
+            <span style="animation-delay: 1.2s">А о неизменности ядра</span>
+            <span style="animation-delay: 1.3s">в любых обстоятельствах.</span>
+        </div>
+    </div>
+</body>
+</html> 
